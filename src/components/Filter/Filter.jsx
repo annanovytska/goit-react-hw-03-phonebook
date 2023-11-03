@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 export const Filter = ({ type, value, onChange }) => {
   return (
@@ -9,6 +10,12 @@ export const Filter = ({ type, value, onChange }) => {
       <StyledInput type={type} value={value} onChange={onChange}></StyledInput>
     </StyledFilterWrapper>
   );
+};
+
+Filter.propTypes = {
+  type: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 const StyledInput = styled.input`

@@ -1,6 +1,7 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 export const ContactList = ({ contacts, onDeleteContact }) => (
   <div>
@@ -20,6 +21,11 @@ export const ContactList = ({ contacts, onDeleteContact }) => (
     </ul>
   </div>
 );
+
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
+};
 
 const StyledBtn = styled.button`
   padding: 5px 5px;

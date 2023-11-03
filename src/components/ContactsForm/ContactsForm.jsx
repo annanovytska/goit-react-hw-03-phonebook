@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 export class ContactsForm extends Component {
   state = {
@@ -50,6 +51,10 @@ export class ContactsForm extends Component {
     );
   }
 }
+
+ContactsForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 const StyledContactWrapper = styled.div`
   margin: 0 auto;
